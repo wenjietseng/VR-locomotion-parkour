@@ -11,7 +11,7 @@
 - Oculus Desktop (for Oculus Link)
 - TMPro
 ### cybersickness reduction
-- ginger VR
+- [Ginger VR](https://github.com/angsamuel/GingerVR)
 ### scene
 - [Low Poly Ultimate Pack](https://assetstore.unity.com/packages/3d/props/low-poly-ultimate-pack-54733)
 - [Forest - Low Poly Toon Battle Arena / Tower Defense Pack](https://assetstore.unity.com/packages/3d/environments/forest-low-poly-toon-battle-arena-tower-defense-pack-100080)

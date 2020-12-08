@@ -9,13 +9,14 @@ public class LocomotionTechnique : MonoBehaviour
     public OVRInput.Controller rightController;
     [Range(0, 10)] public float translationGain = 0.5f;
     public GameObject hmd;
-        [SerializeField] private float leftTriggerValue;    
+    [SerializeField] private float leftTriggerValue;    
     [SerializeField] private float rightTriggerValue;
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 offset;
     [SerializeField] private bool isIndexTriggerDown;
 
 
+    /////////////////////////////////////////////////////////
     // These are for the game mechanism.
     public ParkourCounter parkourCounter;
     public string stage;
@@ -27,6 +28,7 @@ public class LocomotionTechnique : MonoBehaviour
 
     void Update()
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         // Please implement your LOCOMOTION TECHNIQUE in this script :D.
         leftTriggerValue = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, leftController); 
         rightTriggerValue = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, rightController); 
@@ -76,7 +78,7 @@ public class LocomotionTechnique : MonoBehaviour
         this.transform.position = this.transform.position + (offset) * translationGain;
 
 
-
+        ////////////////////////////////////////////////////////////////////////////////
         // These are for the game mechanism.
         if (OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Button.Four))
         {
