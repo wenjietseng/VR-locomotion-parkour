@@ -1,7 +1,10 @@
 # VR-locomotion-parkour
 ## How to Start
-- download instruction
-- three parts (curve area, uphill, sprint and jump)
+```
+git clone https://github.com/wenjietseng/VR-locomotion-parkour.git
+```
+- download the GitHub repo and open __VRParkour__ folder as a Unity project
+- implement your locomotion technique in `LocomotionTechnique.cs`
 
 
 ## Used Assets and Packages
