@@ -1,4 +1,10 @@
 # VR-locomotion-parkour
+## Update
+1. `LocomotionTechinque.cs` Line 41:
+```
+startPos = (OVRInput.GetLocalControllerPosition(leftController) + OVRInput.GetLocalControllerPosition(rightController)) / 2;
+```
+
 ## Demo Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=5s-vTwTFc7U
 " target="_blank"><img src="http://img.youtube.com/vi/5s-vTwTFc7U/0.jpg" 

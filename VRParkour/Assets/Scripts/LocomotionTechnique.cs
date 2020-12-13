@@ -38,7 +38,7 @@ public class LocomotionTechnique : MonoBehaviour
             if (!isIndexTriggerDown)
             {
                 isIndexTriggerDown = true;
-                startPos = (OVRInput.GetLocalControllerPosition(rightController) + OVRInput.GetLocalControllerPosition(rightController)) / 2;
+                startPos = (OVRInput.GetLocalControllerPosition(leftController) + OVRInput.GetLocalControllerPosition(rightController)) / 2;
             }
             offset = hmd.transform.forward.normalized *
                     ((OVRInput.GetLocalControllerPosition(leftController) - startPos) +
