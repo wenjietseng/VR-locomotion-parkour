@@ -1,4 +1,0 @@
-#Thu Nov 03 10:01:22 CET 2022
-base.0=D\:\\unity-projects\\VR-locomotion-parkour\\VRParkour\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
