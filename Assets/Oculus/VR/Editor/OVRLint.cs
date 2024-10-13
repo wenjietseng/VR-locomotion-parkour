@@ -317,8 +317,8 @@ public class OVRLint : EditorWindow
 		}
 	}
 
-
-	public static int RunCheck()
+    [System.Obsolete]
+    public static int RunCheck()
 	{
 		mRecordsStaticCommon.Clear();
 		mRecordsStaticAndroid.Clear();
@@ -375,7 +375,8 @@ public class OVRLint : EditorWindow
 		}
 	}
 
-	static void CheckStaticCommonIssues()
+    [System.Obsolete]
+    static void CheckStaticCommonIssues()
 	{
 		if (OVRManager.IsUnityAlphaOrBetaVersion())
 		{
@@ -468,8 +469,8 @@ public class OVRLint : EditorWindow
 		var tier = UnityEngine.Rendering.GraphicsTier.Tier1;
 		var tierSettings = UnityEditor.Rendering.EditorGraphicsSettings.GetTierSettings(target, tier);
 
-		if ((tierSettings.renderingPath == RenderingPath.DeferredShading ||
-			tierSettings.renderingPath == RenderingPath.DeferredLighting))
+		if (tierSettings.renderingPath == RenderingPath.DeferredShading ||
+			tierSettings.renderingPath == RenderingPath.DeferredLighting)
 		{
 			AddFix(eRecordType.StaticCommon, "Optimize Rendering Path", "For CPU performance, please do not use deferred shading.", delegate (UnityEngine.Object obj, bool last, int selected)
 			{
@@ -854,7 +855,7 @@ public class OVRLint : EditorWindow
 
 		var textures = Resources.FindObjectsOfTypeAll<Texture2D>();
 
-		int maxTextureSize = 1024 * (1 << QualitySettings.masterTextureLimit);
+		int maxTextureSize = 1024 * (1 << QualitySettings.globalTextureMipmapLimit);
 		maxTextureSize = maxTextureSize * maxTextureSize;
 
 		for (int i = 0; i < textures.Length; ++i)
