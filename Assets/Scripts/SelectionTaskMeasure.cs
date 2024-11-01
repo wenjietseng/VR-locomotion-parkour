@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 public class SelectionTaskMeasure : MonoBehaviour
 {
-    public GameObject targerT;
-    public GameObject targerTPrefab;
+    public GameObject targetT;
+    public GameObject targetTPrefab;
     Vector3 targetTStartingPos;
     public GameObject objectT;
     public GameObject objectTPrefab;
@@ -32,8 +31,8 @@ public class SelectionTaskMeasure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        parkourCounter = this.GetComponent<ParkourCounter>();
-        dataRecording = this.GetComponent<DataRecording>();
+        parkourCounter = GetComponent<ParkourCounter>();
+        dataRecording = GetComponent<DataRecording>();
         part = 1;
         donePanel.SetActive(false);
         scoreText.text = "Part" + part.ToString();
@@ -64,7 +63,7 @@ public class SelectionTaskMeasure : MonoBehaviour
         objectTStartingPos = taskUI.transform.position + taskUI.transform.forward * 0.5f + taskUI.transform.up * 0.75f;
         targetTStartingPos = taskUI.transform.position + taskUI.transform.forward * 0.75f + taskUI.transform.up * 1.2f;
         objectT = Instantiate(objectTPrefab, objectTStartingPos, new Quaternion(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
-        targerT = Instantiate(targerTPrefab, targetTStartingPos, new Quaternion(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
+        targetT = Instantiate(targetTPrefab, targetTStartingPos, new Quaternion(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
     }
 
     public void EndOneTask()
@@ -77,9 +76,9 @@ public class SelectionTaskMeasure : MonoBehaviour
         
         // distance error
         manipulationError = Vector3.zero;
-        for (int i = 0; i < targerT.transform.childCount; i++)
+        for (int i = 0; i < targetT.transform.childCount; i++)
         {
-            manipulationError += targerT.transform.GetChild(i).transform.position - objectT.transform.GetChild(i).transform.position;
+            manipulationError += targetT.transform.GetChild(i).transform.position - objectT.transform.GetChild(i).transform.position;
         }
         scoreText.text = scoreText.text + "Time: " + taskTime.ToString("F1") + ", offset: " + manipulationError.magnitude.ToString("F2") + "\n";
         partSumErr += manipulationError.magnitude;
@@ -88,7 +87,7 @@ public class SelectionTaskMeasure : MonoBehaviour
 
         // Debug.Log("Time: " + taskTime.ToString("F1") + "\nPrecision: " + manipulationError.magnitude.ToString("F1"));
         Destroy(objectT);
-        Destroy(targerT);
+        Destroy(targetT);
         StartCoroutine(Countdown(3f));
     }
 

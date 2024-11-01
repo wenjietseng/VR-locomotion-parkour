@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MyGrab : MonoBehaviour
@@ -20,7 +18,7 @@ public class MyGrab : MonoBehaviour
             if (!isSelected && triggerValue > 0.95f)
             {
                 isSelected = true;
-                selectedObj.transform.parent.transform.parent = this.transform;
+                selectedObj.transform.parent.transform.parent = transform;
             }
             else if (isSelected && triggerValue < 0.95f)
             {
