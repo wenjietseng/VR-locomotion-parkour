@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoinRotator : MonoBehaviour
 {
@@ -13,6 +11,6 @@ public class CoinRotator : MonoBehaviour
 
     void Update()
     {
-        this.transform.Rotate(new Vector3(0, deg, 0), Space.Self);
+        transform.Rotate(new Vector3(0, deg, 0), Space.Self);
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class ParkourCounter : MonoBehaviour
@@ -63,7 +61,7 @@ public class ParkourCounter : MonoBehaviour
         objIX1.SetActive(false);
         parkourStart = false;
         endTextGO.SetActive(false);
-        this.selectionTaskMeasure = this.GetComponent<SelectionTaskMeasure>();
+        selectionTaskMeasure = GetComponent<SelectionTaskMeasure>();
     }
 
     void Update()
@@ -78,7 +76,7 @@ public class ParkourCounter : MonoBehaviour
                 firstBanner.SetActive(true);
                 firstCoins.SetActive(true);
                 objIX1.SetActive(true);
-                this.GetComponent<SelectionTaskMeasure>().taskUI.transform.position = objIX1.transform.position;
+                GetComponent<SelectionTaskMeasure>().taskUI.transform.position = objIX1.transform.position;
                 currentRespawnPos = start2FirstRespawn.position;
             }
             else if (locomotionTech.stage == firstBanner.name)
@@ -89,7 +87,7 @@ public class ParkourCounter : MonoBehaviour
                 secondBanner.SetActive(true);
                 secondCoins.SetActive(true);
                 objIX2.SetActive(true);
-                this.GetComponent<SelectionTaskMeasure>().taskUI.transform.position = objIX2.transform.position;
+                GetComponent<SelectionTaskMeasure>().taskUI.transform.position = objIX2.transform.position;
                 part1Time = timeCounter;
                 part1Count = coinCount;
                 currentRespawnPos = first2SecondRespawn.position;
@@ -103,7 +101,7 @@ public class ParkourCounter : MonoBehaviour
                 finalBanner.SetActive(true);
                 finalCoins.SetActive(true);
                 objIX3.SetActive(true);
-                this.GetComponent<SelectionTaskMeasure>().taskUI.transform.position = objIX3.transform.position;
+                GetComponent<SelectionTaskMeasure>().taskUI.transform.position = objIX3.transform.position;
                 part2Time = timeCounter - part1Time;
                 part2Count = coinCount - part1Count;
                 currentRespawnPos = second2FinalRespawn.position;

@@ -30,9 +30,9 @@ git clone https://github.com/wenjietseng/VR-locomotion-parkour.git
 
 ### Core
 
-- Unity 2021.3.10f1 LTS
-- Oculus Integration 46.0 (Oculus Utilities v1.78.0, OVRPlugin v1.78.0, SDK v1.78.0)
-- Oculus XR Plugin 3.0.2
+- Unity 6000.0.23f1 LTS
+- Meta XR All-in-One SDK 69.0.1
+- Oculus XR Plugin 4.3.0
 
 ### Rendering settings
 

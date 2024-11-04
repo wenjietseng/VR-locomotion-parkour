@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LocomotionTechnique : MonoBehaviour
 {
@@ -42,8 +40,8 @@ public class LocomotionTechnique : MonoBehaviour
                 startPos = (OVRInput.GetLocalControllerPosition(leftController) + OVRInput.GetLocalControllerPosition(rightController)) / 2;
             }
             offset = hmd.transform.forward.normalized *
-                    ((OVRInput.GetLocalControllerPosition(leftController) - startPos) +
-                     (OVRInput.GetLocalControllerPosition(rightController) - startPos)).magnitude;
+                    (OVRInput.GetLocalControllerPosition(leftController) - startPos +
+                    (OVRInput.GetLocalControllerPosition(rightController) - startPos)).magnitude;
             Debug.DrawRay(startPos, offset, Color.red, 0.2f);
         }
         else if (leftTriggerValue > 0.95f && rightTriggerValue < 0.95f)
@@ -76,7 +74,7 @@ public class LocomotionTechnique : MonoBehaviour
                 offset = Vector3.zero;
             }
         }
-        this.transform.position = this.transform.position + (offset) * translationGain;
+        transform.position = transform.position + offset * translationGain;
 
 
         ////////////////////////////////////////////////////////////////////////////////
@@ -85,7 +83,7 @@ public class LocomotionTechnique : MonoBehaviour
         {
             if (parkourCounter.parkourStart)
             {
-                this.transform.position = parkourCounter.currentRespawnPos;
+                transform.position = parkourCounter.currentRespawnPos;
             }
         }
     }
@@ -107,7 +105,7 @@ public class LocomotionTechnique : MonoBehaviour
             selectionTaskMeasure.partSumTime = 0f;
             // rotation: facing the user's entering direction
             float tempValueY = other.transform.position.y > 0 ? 12 : 0;
-            Vector3 tmpTarget = new Vector3(hmd.transform.position.x, tempValueY, hmd.transform.position.z);
+            Vector3 tmpTarget = new(hmd.transform.position.x, tempValueY, hmd.transform.position.z);
             selectionTaskMeasure.taskUI.transform.LookAt(tmpTarget);
             selectionTaskMeasure.taskUI.transform.Rotate(new Vector3(0, 180f, 0));
             selectionTaskMeasure.taskStartPanel.SetActive(true);
@@ -115,7 +113,7 @@ public class LocomotionTechnique : MonoBehaviour
         else if (other.CompareTag("coin"))
         {
             parkourCounter.coinCount += 1;
-            this.GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
             other.gameObject.SetActive(false);
         }
         // These are for the game mechanism.

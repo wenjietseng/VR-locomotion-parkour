@@ -14,7 +14,7 @@ public class SimplePlayerController : MonoBehaviour
     }
 
     void Move(float x, float z){
-        rb.velocity = new Vector3(x*speed, x*speed/2, z*speed);
+        rb.linearVelocity = new Vector3(x*speed, x*speed/2, z*speed);
     }
 
     // Update is called once per frame
