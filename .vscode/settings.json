@@ -52,5 +52,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "VR-locomotion-parkour.sln"
+    "dotnet.defaultSolution": "VR-locomotion-parkour.slnx"
 }
